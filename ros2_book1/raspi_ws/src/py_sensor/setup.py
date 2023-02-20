@@ -20,8 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "talker = py_sensor.sensor_publisher:main"
-            "listener = py_sensor.sensor_subscriber:main"
+            "talker = py_sensor.sensor_publisher:main",
+            "listener = py_sensor.sensor_subscriber:main",
         ],
     },
 )

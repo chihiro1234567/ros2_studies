@@ -6,7 +6,7 @@ import numpy as np
 class TrialPublisher(Node):
   def __init__(self):
     super().__init__("trial_publisher")
-    self.publisher = self.create_publisher(Valu, "trial_topic", 10)
+    self.publisher_ = self.create_publisher(Valu, "trial_topic", 10)
     timer_period = 1
     self.timer = self.create_timer(timer_period, self.timer_callback)
     self.i = 1
@@ -14,7 +14,7 @@ class TrialPublisher(Node):
   def timer_callback(self):
     msg = Valu()
     msg.valu = self.i * np.sin(np.radians(360/self.i)) / 2
-    self.publisher.publish(msg)
+    self.publisher_.publish(msg)
     self.get_logger().info("Publising Pi, %s"%(msg.valu))
     self.i += 1
 

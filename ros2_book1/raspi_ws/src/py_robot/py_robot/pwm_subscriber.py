@@ -19,7 +19,7 @@ class PwmSubscriber(Node):
   def listener_callback(self, msg):
     self.get_logger().info("Subscribed [%d]"%(msg.data))
     p_width = msg.data
-    pi.set_pwm_pulsewidth(PWM_PIN, p_width)
+    pi.set_servo_pulsewidth(PWM_PIN, p_width)
 
 def main(args=None):
   try:

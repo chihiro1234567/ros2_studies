@@ -16,7 +16,7 @@ class StatusPublisher(Node):
   def timer_callback(self):
     input_msg = Bool(data=self.status_input())
     self.publisher_.publish(input_msg)
-    self.get_logger().info("Publishing, [%d]"%(input_msg))
+    self.get_logger().info("Publishing, [%s]"%(input_msg))
 
   def init_status(self):
     self.pi = pigpio.pi()

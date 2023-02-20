@@ -20,9 +20,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "robot_manager = py_robot.robot_manager:main"
-            "status_talker = py_robot.status_publisher:main"
-            "pwm_listener = py_robot.pwm_subscriber:main"
+            "robot_manager = py_robot.robot_manager:main",
+            "status_talker = py_robot.status_publisher:main",
+            "pwm_listener = py_robot.pwm_subscriber:main",
         ],
     },
 )

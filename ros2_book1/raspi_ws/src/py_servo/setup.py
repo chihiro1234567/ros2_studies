@@ -20,8 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "talker = py_servo.servo_publisher:main"
-            "listener = py_servo.servo_subscriber:main"
+            "talker = py_servo.servo_publisher:main",
+            "listener = py_servo.servo_subscriber:main",
         ],
     },
 )

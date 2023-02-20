@@ -7,6 +7,7 @@ SENSOR_PIN=18 # GPIO18(no.12)
 class SensorPublisher(Node):
   def __init__(self):
     super().__init__("sensor_publisher")
+    self.init_sensor()
     self.publisher_ = self.create_publisher(Bool, "sensor_topic", 10)
     timer_period = 1
     self.timer = self.create_timer(timer_period, self.timer_callback)
@@ -14,7 +15,7 @@ class SensorPublisher(Node):
   def timer_callback(self):
     input_msg = Bool(data=self.sensor_input())
     self.publisher_.publish(input_msg)
-    self.get_logger().info("Publishing, [%d]"%(input_msg))
+    self.get_logger().info("Publishing, [%s]"%(input_msg))
 
   def init_sensor(self):
     self.pi = pigpio.pi()

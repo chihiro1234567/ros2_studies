@@ -16,7 +16,7 @@ class RobotManger(Node):
     
   def timer_callback(self, status_msg):
     pwm_msg = Int16()
-    pwm_msg = self.i
+    pwm_msg.data = self.i
     self.publisher_.publish(pwm_msg)
     self.get_logger().info("Publishing, [%d]"%(pwm_msg.data))
     if status_msg.data == True:
